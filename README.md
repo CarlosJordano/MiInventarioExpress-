@@ -1,11 +1,11 @@
-# 📦 MiInventarioExpress
+#  MiInventarioExpress
 
 Una aplicación web completa y robusta para la gestión de inventarios, desarrollada bajo el patrón de arquitectura **MVC (Modelo-Vista-Controlador)**. Este sistema permite la administración segura de productos, carga de imágenes y comunicación en tiempo real entre administradores.
 
-## 🎓 Contexto Académico
+##  Contexto Académico
 Este proyecto fue desarrollado como parte de las prácticas integrales del cuarto semestre de la carrera de Ingeniería de Software en la **Universidad Politécnica Salesiana**, demostrando competencias avanzadas en el desarrollo backend y operaciones de bases de datos NoSQL.
 
-## ✨ Características Principales
+##  Características Principales
 
 * **Autenticación de Usuarios:** Sistema de login seguro utilizando sesiones (`express-session`) y encriptación de contraseñas (`bcrypt`).
 * **CRUD Completo:** Creación, lectura, actualización y eliminación de productos en el inventario.
@@ -14,7 +14,7 @@ Este proyecto fue desarrollado como parte de las prácticas integrales del cuart
 * **Comunicación en Tiempo Real:** Módulo de chat integrado para administradores conectado mediante `Socket.io`.
 * **Interfaz Responsiva:** Vistas dinámicas renderizadas en el servidor con `express-handlebars` y estilizadas con Bootstrap 5.
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 **Backend:**
 * Node.js & Express.js
@@ -28,7 +28,7 @@ Este proyecto fue desarrollado como parte de las prácticas integrales del cuart
 * HTML5, CSS3, JavaScript puro
 * Bootstrap 5
 
-## 📂 Estructura del Proyecto (MVC)
+##  Estructura del Proyecto (MVC)
 
 \`\`\`text
 MiInventarioExpress/
@@ -43,7 +43,7 @@ MiInventarioExpress/
 └── .env              # Variables de entorno
 \`\`\`
 
-## 🚀 Guía de Instalación y Ejecución
+##  Guía de Instalación y Ejecución
 
 ### 1. Requisitos Previos
 * Tener [Node.js](https://nodejs.org/) instalado.
@@ -81,7 +81,7 @@ Para poder ingresar al sistema por primera vez, necesitas crear el usuario admin
    * **Usuario:** \`admin\`
    * **Contraseña:** \`123\`
 
-## 👨‍💻 Autor
+##  Autor
 
 **Carlos Jordano**
 * GitHub: [@CarlosJordano](https://github.com/CarlosJordano)
