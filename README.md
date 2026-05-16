@@ -1,20 +1,20 @@
-#  MiInventarioExpress
+# MiInventarioExpress
 
 Una aplicación web completa y robusta para la gestión de inventarios, desarrollada bajo el patrón de arquitectura **MVC (Modelo-Vista-Controlador)**. Este sistema permite la administración segura de productos, carga de imágenes y comunicación en tiempo real entre administradores.
 
-##  Contexto Académico
+## Contexto Académico
 Este proyecto fue desarrollado como parte de las prácticas integrales del cuarto semestre de la carrera de Ingeniería de Software en la **Universidad Politécnica Salesiana**, demostrando competencias avanzadas en el desarrollo backend y operaciones de bases de datos NoSQL.
 
-##  Características Principales
+## Características Principales
 
 * **Autenticación de Usuarios:** Sistema de login seguro utilizando sesiones (`express-session`) y encriptación de contraseñas (`bcrypt`).
-* **CRUD Completo:** Creación, lectura, actualización y eliminación de productos en el inventario.
-* **Gestión de Archivos:** Subida y validación de imágenes de productos almacenadas localmente usando `multer`.
+* **CRUD Completo:** Creación, lectura, actualización (edición con persistencia de imágenes) y eliminación de productos en el inventario.
+* **Gestión de Archivos:** Subida y validación de imágenes de productos almacenadas localmente usando `multer` con restricción de tamaño máximo de 2MB.
 * **Persistencia de Datos:** Integración con MongoDB mediante el ODM `mongoose`.
 * **Comunicación en Tiempo Real:** Módulo de chat integrado para administradores conectado mediante `Socket.io`.
 * **Interfaz Responsiva:** Vistas dinámicas renderizadas en el servidor con `express-handlebars` y estilizadas con Bootstrap 5.
 
-##  Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 **Backend:**
 * Node.js & Express.js
@@ -28,12 +28,12 @@ Este proyecto fue desarrollado como parte de las prácticas integrales del cuart
 * HTML5, CSS3, JavaScript puro
 * Bootstrap 5
 
-##  Estructura del Proyecto (MVC)
+## Estructura del Proyecto (MVC)
 
-\`\`\`text
+```text
 MiInventarioExpress/
 ├── controllers/      # Lógica de negocio (authController, productoController)
-├── middlewares/      # Interceptores (Autenticación, subida de archivos)
+├── middlewares/      # Interceptores (Autenticación, subida de archivos con límites)
 ├── models/           # Esquemas de base de datos (Usuario, Producto)
 ├── public/           # Archivos estáticos accesibles por el cliente
 ├── routes/           # Definición de endpoints de la API y vistas
@@ -41,8 +41,7 @@ MiInventarioExpress/
 ├── views/            # Plantillas Handlebars (.hbs)
 ├── app.js            # Punto de entrada y configuración del servidor
 └── .env              # Variables de entorno
-\`\`\`
-
+```
 ##  Guía de Instalación y Ejecución
 
 ### 1. Requisitos Previos
