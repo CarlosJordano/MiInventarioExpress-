@@ -1,0 +1,88 @@
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">MiInventarioExpress</span>
+        <div class="d-flex text-white align-items-center">
+            <span class="me-3">Admin: {{username}}</span>
+            <a href="/logout" class="btn btn-sm btn-danger">Cerrar Sesión</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <!-- CRUD de Productos -->
+        <div class="col-md-8">
+            <h4>Gestión de Productos</h4>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <form action="/productos" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <input type="text" name="nombre" class="form-control" placeholder="Nombre del producto" required>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <input type="number" step="0.01" name="precio" class="form-control" placeholder="Precio" required>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <textarea name="descripcion" class="form-control" placeholder="Descripción" required></textarea>
+                            </div>
+                            <div class="col-md-9 mb-2">
+                                <input type="file" name="imagen" class="form-control" accept="image/*">
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <button type="submit" class="btn btn-success w-100">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <table class="table table-bordered bg-white shadow-sm">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each productos}}
+                    <tr>
+                        <td>
+                            {{#if this.imagen}}
+                                <img src="{{this.imagen}}" width="50" alt="prod">
+                            {{else}}
+                                <span>N/A</span>
+                            {{/if}}
+                        </td>
+                        <td>{{this.nombre}}</td>
+                        <td>${{this.precio}}</td>
+                        <td>{{this.descripcion}}</td>
+                        <td>
+                            <form action="/productos/eliminar/{{this._id}}" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Chat Socket.io -->
+        <div class="col-md-4">
+            <h4>Chat de Administradores</h4>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div id="chat-messages"></div>
+                    <form id="chat-form" class="d-flex">
+                        <input type="text" id="chat-input" class="form-control me-2" placeholder="Escribe un mensaje..." autocomplete="off">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
